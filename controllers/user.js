@@ -22,7 +22,7 @@ exports.signUp = async (req, res) => {
             await user.save().then((result) => {
               if (result) {
                 res.status(200).json({
-                  message: "You have signed up successfully",
+                  result,
                 });
               } else {
                 console.log("error occured");
@@ -82,7 +82,7 @@ exports.logIn = async (req, res) => {
 
 exports.getUser = async (req, res) => {
     try {
-      let userId = req.body.id;
+      let userId = req.params.id;
       console.log(userId);
       const user = await User.findOne({ _id: userId });
       if (!user) {
