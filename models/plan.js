@@ -9,11 +9,11 @@ const PlanSchema = new mongoose.Schema({
   
 // Define the Week schema
 const WeekSchema = new mongoose.Schema({
-    // userId: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'User',
-    //     required: true,
-    // },
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    },
     week_name: { type: String, required: true },
     plans: { type: [PlanSchema], required: true },
     createdAt: {
