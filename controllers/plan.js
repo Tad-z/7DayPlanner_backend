@@ -4,7 +4,7 @@ exports.postPlans = async (req,res) => {
     try{
       const weekDetails = req.body
       const week = new Week({
-        // userId: req.userData.userId,
+        userId: req.userData.userId,
         week_name: weekDetails.week_name,
         plans: weekDetails.plans.map(plan => ({
             plan_name: plan.plan_name,
