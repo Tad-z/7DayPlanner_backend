@@ -19,5 +19,5 @@ app.listen(5000, () => {
     console.log("Server connected.....")
 })
 
-app.use('/api/user', userRouter);
-app.use('/api/plans', planRouter);
+app.use('/users', userRouter);
+app.use('/events', planRouter);
