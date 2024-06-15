@@ -82,7 +82,7 @@ exports.logIn = async (req, res) => {
 
 exports.getUser = async (req, res) => {
     try {
-      let userId = req.userData.id;
+      let userId = req.body.id;
       console.log(userId);
       const user = await User.findOne({ _id: userId });
       if (!user) {
